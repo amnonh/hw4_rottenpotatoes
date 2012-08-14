@@ -18,6 +18,12 @@ Scenario: add director to existing movie
   And  I fill in "Director" with "Ridley Scott"
   And  I press "Update Movie Info"
   Then the director of "Alien" should be "Ridley Scott"
+  And I go to the home page
+  And I check the following ratings: PG, R, G, PG-13
+  And I press "Refresh"
+  Then I should see "Ridley Scott"
+  And I am on the details page for "Alien"
+  Then I should see "Ridley Scott"
 
 Scenario: find movie with same director
   Given I am on the details page for "Star Wars"
