@@ -16,7 +16,6 @@ describe MoviesController do
     it 'should make the search results available to that template' do
       fake_results = [mock('Movie'), mock('Movie')]
       Movie.stub(:search_by_director).and_return(fake_results)
-      Movie.stub(:find)
       get :search_by_director, :id => 1
       # look for controller method to assign @movies
       assigns(:movies).should == fake_results

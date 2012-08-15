@@ -3,4 +3,6 @@ module MoviesHelper
   def oddness(count)
     count.odd? ?  "odd" :  "even"
   end
+
+  module_function :oddness
 end
